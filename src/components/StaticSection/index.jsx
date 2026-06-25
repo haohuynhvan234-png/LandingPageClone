@@ -47,7 +47,7 @@ export const StaticSection = () => {
           </div>
           <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased m-0 p-0 box-border text-left flex-1 transition-none opacity-100 translate-y-0">
             <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] antialiased text-[48px] font-[800] tracking-[-0.04em] leading-[1] m-0 p-0 box-border mb-[6px]">
-              <CountUpComponent end={50} suffix="ms" duration={2} />
+              <CountUpComponent end={50} prefix="<" suffix="ms" duration={2} />
             </div>
             <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] leading-[1.6] antialiased text-left m-0 p-0 box-border text-[13px] text-[#55566A] font-[500]">
               Query response time
