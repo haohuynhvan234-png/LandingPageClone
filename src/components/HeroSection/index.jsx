@@ -98,13 +98,13 @@ export const HeroSection = () => {
             <div className="text-[11.5px] font-medium text-[#55566A] uppercase tracking-[0.1em] font-['Plus_Jakarta_Sans',-apple-system,sans-serif] leading-[1.6] antialiased box-border m-0 p-0">
               Trusted by 2,400+ teams
             </div>
-            <div className="flex flex-wrap items-center gap-8">
+            <div className="flex flex-wrap items-center gap-8 ">
               {["Vercel", "Linear", "Raycast", "Resend", "Supabase"].map((logo) => (
                 <span
                   key={logo}
-                  className="flex items-center gap-2 text-[14px] font-medium text-white/20"
+                  className="flex items-center gap-2 text-[14px] font-medium text-white/20 hover:text-[#cfcfcf]"
                 >
-                  <span className="h-5 w-5 rounded-md bg-white/5 border border-white/5" />
+                  <span className="h-5 w-5 rounded-md bg-white/5 border border-white/5 " />
                   {logo}
                 </span>
               ))}
