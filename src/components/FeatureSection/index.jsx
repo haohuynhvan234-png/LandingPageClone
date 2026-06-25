@@ -289,14 +289,14 @@ export const FeatureSection = () => {
                       value: "12,480",
                       width: "100%",
                       drop: "—",
-                      color: "bg-blue-500",
+                      color: "bg-[#FF6B6B]",
                     },
                     {
                       label: "Sign Up Started",
                       value: "8,736",
                       width: "70%",
                       drop: "-30%",
-                      color: "bg-blue-500",
+                      color: "bg-[#FF6B6B]",
                     },
                     {
                       label: "Email Verified",
@@ -345,8 +345,543 @@ export const FeatureSection = () => {
             </div>
           )}
           {activeTab == "sdk" && (
-            <div class="hidden grid-cols-[1fr_1.2fr] gap-16 items-center animate-[panelIn_0.45s_ease_forwards]">
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center animate-[panelIn_0.45s_ease_forwards]">
+              <div className="flex flex-col items-start space-y-6">
+                {/* Icon wrapper (Màu hồng mờ theo biến --accent-soft) */}
+                <div className="w-12 h-12 bg-[#FF6B6B]/[0.08] border border-[#FF6B6B]/[0.25] rounded-[10px] grid place-items-center text-[#FF6B6B]">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
 
+                {/* Tiêu đề (Biến --text-primary) */}
+                <h3 className="text-[36px] font-extrabold tracking-[-0.03em] text-[#EEEEF0] leading-[1.15]">
+                  One-Line SDK
+                </h3>
+
+                {/* Mô tả (Biến --text-secondary) */}
+                <p className="text-[16px] text-[#8A8B9E] leading-[1.6] max-w-md">
+                  Drop in a single script tag or npm package. Auto-capture
+                  pageviews, clicks, and custom events out of the box.
+                </p>
+
+                {/* Bullet list */}
+                <ul className="space-y-4 pt-2">
+                  <li className="flex items-center gap-3 text-[15px] font-medium text-[#97979d]">
+                    <svg
+                      className="text-[#FF6B6B]"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Under 4KB gzipped
+                  </li>
+                  <li className="flex items-center gap-3 text-[15px] font-medium text-[#97979d]">
+                    <svg
+                      className="text-[#FF6B6B]"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Zero config autocapture
+                  </li>
+                  <li className="flex items-center gap-3 text-[15px] font-medium text-[#97979d]">
+                    <svg
+                      className="text-[#FF6B6B]"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    TypeScript-first API
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full">
+                {/* Cửa sổ Mockup chính */}
+                <div className="rounded-2xl bg-[#1A1A1E] border border-white/[0.06] shadow-[0_24px_70px_rgba(0,0,0,0.55)] overflow-hidden relative">
+                  {/* Thanh công cụ 3 chấm Mac-style */}
+                  <div className="px-5 py-4 bg-white/[0.02] border-b border-white/[0.04] flex gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#FF5F56]"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#27C93F]"></span>
+                  </div>
+
+                  {/* Thân cửa sổ code */}
+                  <div className="p-6 font-mono text-[14px] leading-[1.65]">
+                    {/* Khối Code Editor (Khớp màu chữ theo ảnh mẫu) */}
+                    <div className="whitespace-pre overflow-x-auto text-left text-[#8A8B9E]">
+                      <span className="text-[#55566A]">
+                        {"// Install: npm i @quantix/sdk"}
+                      </span>
+                      {"\n\n"}
+                      <span className="text-[#FF6B6B]">import</span>
+                      {" { Quantix } "}
+                      <span className="text-[#FF6B6B]">from</span>{" "}
+                      <span className="text-[#22C55E]">{"'@quantix/sdk'"}</span>
+                      {"\n\n"}
+                      <span className="text-[#FF6B6B]">const</span>
+                      {" qx = "}
+                      <span className="text-[#FF6B6B]">new</span>{" "}
+                      <span className="text-[#F59E0B]">Quantix</span>({"{"}
+                      {"\n"}
+                      {"  apiKey: "}
+                      <span className="text-[#22C55E]">
+                        {"'qx_live_k8x2...'"}
+                      </span>
+                      ,{"\n"}
+                      {"  autocapture: "}
+                      <span className="text-[#FF6B6B]">true</span>,{"\n"}
+                      {"  sessionReplay: "}
+                      <span className="text-[#FF6B6B]">true</span>,{"\n"}
+                      {"})"}
+                      {"\n\n"}
+                      <span className="text-[#55566A]">
+                        {"// Track custom events"}
+                      </span>
+                      {"\n"}
+                      {"qx."}
+                      <span className="text-[#F59E0B]">track</span>(
+                      <span className="text-[#22C55E]">{"'checkout'"}</span>,{" "}
+                      {"{"}
+                      {"\n"}
+                      {"  value: "}
+                      <span className="text-[#FF6B6B]">49.99</span>,{"\n"}
+                      {"  plan: "}
+                      <span className="text-[#22C55E]">{"'pro'"}</span>
+                      {"\n"}
+                      {"})"}
+                    </div>
+
+                    {/* Khu vực Output */}
+                    <div className="mt-6 pt-5 border-t border-white/[0.05]">
+                      <div className="text-[11px] font-bold text-[#55566A] uppercase tracking-wider mb-3">
+                        Output
+                      </div>
+
+                      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.02] border border-white/[0.04] text-[#22C55E] text-[13.5px]">
+                        {/* Chấm xanh lá nhấp nháy phát sóng */}
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]"></span>
+                        </span>
+                        Event tracked in 8ms — 200 OK
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {activeTab == "session-replay" && (
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
+              {/* Left */}
+              <div className="flex flex-col items-start space-y-6">
+                <div className="w-12 h-12 rounded-[10px] border border-[#FF6B6B]/25 bg-[#FF6B6B]/10 text-[#FF6B6B] grid place-items-center">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4l3 3" />
+                  </svg>
+                </div>
+
+                <h3 className="text-[36px] font-extrabold tracking-[-0.03em] text-[#EEEEF0] leading-[1.15]">
+                  Session Replay
+                </h3>
+
+                <p className="text-[16px] text-[#8A8B9E] leading-[1.6] max-w-md">
+                  See exactly what your users see. Replay sessions with
+                  pixel-perfect accuracy and zero performance impact on your
+                  app.
+                </p>
+
+                <ul className="space-y-4">
+                  {[
+                    "Pixel-perfect playback",
+                    "Console log capture",
+                    "Rage click detection",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-[15px] font-medium text-[#97979d]"
+                    >
+                      <svg
+                        className="text-[#FF6B6B]"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right */}
+              <div className="rounded-3xl border border-white/5 bg-[#26262D] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
+                {/* Toolbar */}
+                <div className="px-5 py-4 border-b border-white/5 flex gap-2 bg-white/[0.02]">
+                  <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
+                  <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27C93F]" />
+                </div>
+
+                <div className="p-6">
+                  {/* Replay UI */}
+                  <div className="rounded-2xl border border-white/5 bg-[#1E1E24] p-4">
+                    {/* Header */}
+                    <div className="flex items-center justify-between text-[12px] mb-4">
+                      <span className="flex items-center gap-2 text-[#EEEEF0]">
+                        <span className="w-2 h-2 rounded-full bg-[#FF6B6B] animate-pulse" />
+                        Recording
+                      </span>
+
+                      <span className="text-[#8A8B9E]">02:34 / 05:12</span>
+                    </div>
+
+                    {/* Viewport */}
+                    <div className="relative rounded-xl bg-[#26262D] p-4 min-h-[260px] overflow-hidden">
+                      {/* Fake Page */}
+                      <div className="rounded-lg bg-[#2E2E36] p-4">
+                        <div className="h-3 w-full rounded bg-[#3A3A43] mb-4" />
+
+                        <div className="space-y-3 mb-5">
+                          <div className="h-4 w-4/5 rounded bg-[#3A3A43]" />
+                          <div className="h-4 w-3/5 rounded bg-[#3A3A43]" />
+                          <div className="h-4 w-2/3 rounded bg-[#3A3A43]" />
+                        </div>
+
+                        <div className="w-24 h-8 rounded-lg bg-[#FF6B6B]" />
+
+                        <div className="grid grid-cols-3 gap-3 mt-6">
+                          <div className="h-20 rounded-xl bg-[#3A3A43]" />
+                          <div className="h-20 rounded-xl bg-[#3A3A43]" />
+                          <div className="h-20 rounded-xl bg-[#3A3A43]" />
+                        </div>
+                      </div>
+
+                      {/* Cursor */}
+                      <div className="absolute top-[110px] left-[180px] text-[#FF6B6B] drop-shadow-[0_0_8px_rgba(255,107,107,0.5)]">
+                        <svg
+                          width="20"
+                          height="26"
+                          viewBox="0 0 20 26"
+                          fill="none"
+                        >
+                          <path
+                            d="M17 2L4 13L17 24"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Timeline */}
+                    <div className="flex items-center gap-3 mt-4">
+                      <button className="w-7 h-7 rounded-full bg-[#FF6B6B] flex items-center justify-center">
+                        <svg
+                          width="8"
+                          height="8"
+                          viewBox="0 0 24 24"
+                          fill="white"
+                        >
+                          <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                      </button>
+
+                      <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                        <div className="h-full w-[55%] bg-[#FF6B6B] rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Event Tags */}
+                  <div className="flex flex-wrap gap-2 mt-5">
+                    <span className="px-3 py-1 rounded-full bg-white/5 text-[12px] text-[#EEEEF0] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#FF6B6B]" />
+                      click
+                    </span>
+
+                    <span className="px-3 py-1 rounded-full bg-white/5 text-[12px] text-[#EEEEF0] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
+                      scroll
+                    </span>
+
+                    <span className="px-3 py-1 rounded-full bg-white/5 text-[12px] text-[#EEEEF0] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#F43F5E]" />
+                      rage_click
+                    </span>
+
+                    <span className="px-3 py-1 rounded-full bg-white/5 text-[12px] text-[#EEEEF0] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#22C55E]" />
+                      input
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {activeTab == "privacy" && (
+            <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center m-0 p-0 box-border antialiased text-[#EEEEF0] font-['Plus_Jakarta_Sans',-apple-system,sans-serif]">
+              {/* ================= KHỐI TEXT BÊN TRÁI ================= */}
+              <div className="feature-text flex flex-col items-start space-y-6">
+                {/* Icon Ổ Khóa (Màu hồng mờ theo biến --accent-soft) */}
+                <div className="feat-icon w-12 h-12 bg-[#FF6B6B]/[0.08] border border-[#FF6B6B]/[0.15] rounded-xl grid place-items-center text-[#FF6B6B]">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </div>
+
+                {/* Tiêu đề chính */}
+                <h3 className="text-[36px] font-extrabold tracking-[-0.03em] text-white leading-[1.15]">
+                  Privacy First
+                </h3>
+
+                {/* Đoạn mô tả (Biến --text-secondary) */}
+                <p className="text-[16px] text-[#8A8B9E] leading-[1.6] max-w-md">
+                  GDPR and CCPA compliant out of the box. Cookieless tracking,
+                  automatic PII masking, and EU hosting available.
+                </p>
+
+                {/* Danh sách Bullet List (Dấu tích đỏ cam) */}
+                <ul className="feature-bullets space-y-4 pt-2">
+                  <li className="flex items-center gap-3 text-[15px] font-medium text-[#EEEEF0]">
+                    <svg
+                      className="text-[#FF6B6B]"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    No cookie banners needed
+                  </li>
+                  <li className="flex items-center gap-3 text-[15px] font-medium text-[#EEEEF0]">
+                    <svg
+                      className="text-[#FF6B6B]"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    EU data residency
+                  </li>
+                  <li className="flex items-center gap-3 text-[15px] font-medium text-[#EEEEF0]">
+                    <svg
+                      className="text-[#FF6B6B]"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    SOC 2 Type II certified
+                  </li>
+                </ul>
+              </div>
+
+              {/* ================= KHỐI VISUAL Ô CỬA SỔ BÊN PHẢI ================= */}
+              <div className="feature-visual w-full">
+                {/* Khung ô cửa sổ lớn */}
+                <div className="rounded-2xl bg-[#1A1A1E] border border-white/[0.06] shadow-[0_24px_70px_rgba(0,0,0,0.55)] overflow-hidden relative">
+                  {/* Thanh công cụ Toolbar 3 chấm Mac-style */}
+                  <div className="fv-toolbar px-5 py-4 bg-white/[0.02] border-b border-white/[0.04] flex gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#FF5F56]"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#27C93F]"></span>
+                  </div>
+
+                  {/* Thân cửa sổ chứa lưới 4 thẻ thông tin nhỏ (Privacy Grid) */}
+                  <div className="fv-body p-6 md:p-8">
+                    <div className="privacy-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {/* Thẻ 1: GDPR Compliant */}
+                      <div className="privacy-card p-5 rounded-xl bg-white/[0.02] border border-white/[0.04] flex flex-col items-start space-y-3">
+                        <div className="pc-icon w-8 h-8 rounded-lg bg-[#22C55E]/[0.08] border border-[#22C55E]/[0.15] grid place-items-center text-[#22C55E]">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                          </svg>
+                        </div>
+                        <h4 className="text-[16px] font-bold text-white tracking-tight">
+                          GDPR Compliant
+                        </h4>
+                        <p className="text-[13.5px] text-[#8A8B9E] leading-[1.5]">
+                          Full compliance with European data regulations
+                        </p>
+                      </div>
+
+                      {/* Thẻ 2: No Cookies */}
+                      <div className="privacy-card p-5 rounded-xl bg-white/[0.02] border border-white/[0.04] flex flex-col items-start space-y-3">
+                        <div className="pc-icon w-8 h-8 rounded-lg bg-[#22C55E]/[0.08] border border-[#22C55E]/[0.15] grid place-items-center text-[#22C55E]">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                          </svg>
+                        </div>
+                        <h4 className="text-[16px] font-bold text-white tracking-tight">
+                          No Cookies
+                        </h4>
+                        <p className="text-[13.5px] text-[#8A8B9E] leading-[1.5]">
+                          Cookieless tracking — no annoying banners
+                        </p>
+                      </div>
+
+                      {/* Thẻ 3: SOC 2 Type II */}
+                      <div className="privacy-card p-5 rounded-xl bg-white/[0.02] border border-white/[0.04] flex flex-col items-start space-y-3">
+                        <div className="pc-icon w-8 h-8 rounded-lg bg-[#22C55E]/[0.08] border border-[#22C55E]/[0.15] grid place-items-center text-[#22C55E]">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <rect
+                              x="3"
+                              y="11"
+                              width="18"
+                              height="11"
+                              rx="2"
+                            ></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                          </svg>
+                        </div>
+                        <h4 className="text-[16px] font-bold text-white tracking-tight">
+                          SOC 2 Type II
+                        </h4>
+                        <p className="text-[13.5px] text-[#8A8B9E] leading-[1.5]">
+                          Enterprise-grade security certification
+                        </p>
+                      </div>
+
+                      {/* Thẻ 4: EU Hosting */}
+                      <div className="privacy-card p-5 rounded-xl bg-white/[0.02] border border-white/[0.04] flex flex-col items-start space-y-3">
+                        <div className="pc-icon w-8 h-8 rounded-lg bg-[#22C55E]/[0.08] border border-[#22C55E]/[0.15] grid place-items-center text-[#22C55E]">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                          </svg>
+                        </div>
+                        <h4 className="text-[16px] font-bold text-white tracking-tight">
+                          EU Hosting
+                        </h4>
+                        <p className="text-[13.5px] text-[#8A8B9E] leading-[1.5]">
+                          Data residency in Frankfurt, Germany
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
           <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased m-0 p-0 box-border hidden grid-cols-[1fr_1.2fr] gap-[64px] items-center animate-[panelIn_0.45s_ease_forwards]">
@@ -356,9 +891,6 @@ export const FeatureSection = () => {
           </div>
         </div>
       </div>
-
-      {/* {activeTab == "Session Replay" && <SessionReplayPanel />} */}
-      {/* {activeTab == "Privacy" && <PrivacyPanel />} */}
     </div>
   );
 };
