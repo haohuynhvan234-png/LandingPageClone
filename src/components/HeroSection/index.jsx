@@ -1,9 +1,17 @@
 import React from "react";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const HeroSection = () => {
+    useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
     // Hero Section
-    <div className="relative pt-[180px] px-6 pb-[120px] overflow-hidden text-text-primary font-jakarta leading-[1.6] antialiased box-border m-0">
+    <div data-aos="fade-up" className="relative pt-[180px] px-6 pb-[120px] overflow-hidden text-text-primary font-jakarta leading-[1.6] antialiased box-border m-0">
       <div className="`relative z-[1] grid grid-cols-2 gap-[60px] items-center w-full max-w-[1200px] mx-auto px-6 text-text-primary font-jakarta leading-[1.6] antialiased box-border">
         <div>
           <div className="inline-flex items-center gap-2 pt-[5px] pr-4 pb-[5px] pl-[7px] bg-[rgba(255,107,107,0.08)] border border-[rgba(255,107,107,0.2)] rounded-[100px] text-[12.5px] font-semibold text-[#FF9B9B] mb-7 font-['Plus_Jakarta_Sans',-apple-system,sans-serif] leading-[1.6] antialiased box-border m-0">

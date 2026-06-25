@@ -1,8 +1,17 @@
 import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const PriceSection = () => {
+    useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
-    <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased m-0 box-border py-[120px] relative bg-gradient-to-b from-[#1E1E24] via-[rgba(255,107,107,0.02)] to-[#1E1E24]">
+    <div data-aos="fade-up" className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased m-0 box-border py-[120px] relative bg-gradient-to-b from-[#1E1E24] via-[rgba(255,107,107,0.02)] to-[#1E1E24]">
       <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased box-border w-full max-w-[1200px] mx-auto px-6">
         <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased m-0 p-0 box-border text-center mb-[64px] transition-none opacity-100 translate-y-0">
           <div className="font-mono text-[12px] font-[600] text-[#FF6B6B] uppercase tracking-[0.1em] inline-flex items-center gap-[8px] text-center m-0 p-0 box-border mb-[14px] leading-[1.6] antialiased">

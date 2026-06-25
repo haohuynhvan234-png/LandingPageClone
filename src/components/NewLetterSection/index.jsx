@@ -1,8 +1,17 @@
 import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const NewLetterSection = () => {
+    useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
-    <section class="w-full bg-[#1E1E24] py-[80px] px-6 text-[#EEEEF0] font-['Plus_Jakarta_Sans',-apple-system,sans-serif] antialiased">
+    <section data-aos="fade-up" class="w-full bg-[#1E1E24] py-[80px] px-6 text-[#EEEEF0] font-['Plus_Jakarta_Sans',-apple-system,sans-serif] antialiased">
       <div class="max-w-[1200px] mx-auto">
         <div class="max-w-[580px] mx-auto text-center flex flex-col items-center">
           <h2 class="text-[32px] md:text-[40px] font-[800] tracking-[-0.04em] text-[#EEEEF0] leading-tight mb-[12px]">

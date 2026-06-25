@@ -1,8 +1,18 @@
 import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Header = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
   return (
-    <div className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased fixed top-0 left-0 w-full z-[1000] bg-[#1E1E24]/80 backdrop-blur-[24px] py-[14px] border-b border-[rgba(255,255,255,0.06)]">
+    <div data-aos="fade-down" className="font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[#EEEEF0] leading-[1.6] antialiased fixed top-0 left-0 w-full z-[1000] bg-[#1E1E24]/80 backdrop-blur-[24px] py-[14px] border-b border-[rgba(255,255,255,0.06)]">
       <div className="w-full max-w-[1200px] mx-auto px-6 flex items-center justify-between box-border">
         
         <a

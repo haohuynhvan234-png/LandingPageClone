@@ -1,8 +1,17 @@
 import React from 'react'
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Footer = () => {
+    useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
-    <footer class="w-full bg-[#1E1E24] text-[#8A8B9E] font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[13px] antialiased py-[40px] px-6 border-t border-white/[0.04]">
+    <footer data-aos="fade-up" class="w-full bg-[#1E1E24] text-[#8A8B9E] font-['Plus_Jakarta_Sans',-apple-system,sans-serif] text-[13px] antialiased py-[40px] px-6 border-t border-white/[0.04]">
   <div class="max-w-[1200px] mx-auto flex flex-col items-center">
     
     <div class="flex flex-wrap items-center justify-center gap-[16px] mb-[32px]">
